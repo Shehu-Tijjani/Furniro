@@ -1,0 +1,238 @@
+nav {
+  background-color: #ffff;
+  border-bottom: 1px solid #e0e0e06e;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
+
+nav .container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.hamburger {
+  display: none;
+}
+
+nav ul {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  font-weight: 400;
+  font-size: 15px;
+  margin: 0 20px;
+  flex: 1;
+  max-width: 30vw;
+  position: relative;
+}
+
+nav .right-flexbox {
+  flex: 0.5;
+}
+
+nav .right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 20px;
+  gap: max(5px, 2vw);
+  max-width: fit-content;
+  margin-left: auto;
+  transition: all 0.6s ease-in-out;
+}
+
+nav .right.addWidth {
+  max-width: fit-content;
+}
+
+nav .right svg {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+nav .right .icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+nav .search {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0px;
+  border-radius: 40px;
+  background-color: transparent;
+  overflow: hidden;
+  width: 24px;
+  transition: all 0.5s ease-in-out;
+  box-sizing: border-box;
+}
+
+nav .search.show {
+  width: 100%;
+  padding: 5px;
+  gap: 10px;
+  background-color: #f0f0f0;
+}
+
+nav .search input {
+  padding-left: 0px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+nav .search.show input {
+  padding-left: 10px;
+  width: 100%;
+  overflow: autos;
+}
+
+nav .search svg {
+  transition: all 0.6s ease-in-out;
+}
+
+@media (max-width: 900px) {
+  nav .container {
+    flex-wrap: wrap;
+  }
+
+  nav ul {
+    flex-direction: column;
+    justify-content: start;
+    position: absolute;
+    left: -500px;
+    top: 100%;
+    width: 100%;
+    max-width: 400px;
+    min-width: fit-content;
+    height: calc(100lvh - 100px);
+    min-height: fit-content;
+    background-color: #fff;
+    color: #0000008b;
+    padding: 15px;
+    border: 1px solid #e0e0e06e;
+    border-radius: 0px;
+    transition: all 0.5s ease-out;
+    gap: 0;
+  }
+
+  nav ul.active {
+    left: -35px;
+  }
+
+  .HamMenuBgCloseTab {
+    display: none;
+  }
+
+  nav ul.active .HamMenuBgCloseTab {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: transparent;
+    z-index: -1;
+    display: block;
+  }
+
+  nav ul li {
+    padding: 2px 0;
+    width: 100%;
+  }
+
+  ul li:last-child {
+    border: none;
+  }
+
+  ul .link {
+    padding: 10px 20px;
+    width: 100%;
+    display: block;
+    border-radius: 40px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  ul .link:hover {
+    background-color: #e0e0e06e;
+  }
+
+  nav .right-flexbox {
+    flex: 1;
+    justify-content: center;
+  }
+
+  nav .right {
+    max-width: fit-content;
+    gap: 10px;
+  }
+
+  nav .right .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  nav .right svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 0.1em;
+  }
+
+  .hamburger {
+    height: 14px;
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  .hamburger div {
+    height: 2px;
+    width: 100%;
+    background-color: #000;
+    border-radius: 5px;
+  }
+
+  .hamburger div.top {
+    transform: translateY(0px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger div.middle {
+    transform: translateY(0px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger div.bottom {
+    transform: translateY(0px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger.active div.top {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .hamburger.active div.middle {
+    opacity: 0;
+  }
+
+  .hamburger.active div.bottom {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}

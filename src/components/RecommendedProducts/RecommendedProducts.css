@@ -1,0 +1,241 @@
+.recomProducts .container {
+  width: 100%;
+}
+
+.recomProducts h1 {
+  margin-bottom: 20px;
+}
+
+.arrow__wrapper {
+  flex-shrink: 0;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff9c;
+  backdrop-filter: blur(10px);
+  position: absolute;
+  left: 0;
+  top: 33%;
+  cursor: pointer;
+  flex-shrink: 0;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.hide {
+  display: none;
+}
+
+.fade {
+  opacity: 0.3;
+}
+
+.arrow__wrapper.rightArr {
+  left: calc(100% - 60px);
+}
+
+.arrow__wrapper.rightArr svg {
+  transform: rotate(180deg);
+}
+
+.rightArr svg,
+.leftArr svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* Slider - Arrpw-Typed */
+.recomProducts__list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.recomProducts__list::-webkit-scrollbar {
+  display: none;
+}
+
+.recomProducts__card {
+  min-width: calc(100% / 3 - 20px);
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.recomProducts__image {
+  width: 100%;
+  height: 100vh;
+  max-height: 450px;
+  min-height: 300px;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+}
+
+.recomProducts__image::selection {
+  background: none;
+}
+
+.recomProducts__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.recomProducts__image .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(248, 248, 248);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.recomProducts__image:hover .overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.recomProducts__image .overlay .image__wrapper {
+  width: 100%;
+}
+
+.wishlist-icon {
+  height: 17px;
+  width: 17px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 9999;
+  transition: all 3s ease;
+}
+
+.wishlist-icon::before {
+  content: "";
+  height: 200%;
+  width: 200%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: #f4f4f42d;
+  border-radius: 50%;
+  z-index: 999;
+}
+
+.wishlist-icon svg {
+  height: 100%;
+  width: 100%;
+  fill: none;
+  stroke: red;
+  stroke-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.wishlist-icon.added svg {
+  fill: red;
+}
+
+.wishlist-icon:hover svg {
+  fill: red;
+  transform: scale(1.1);
+}
+
+.recomProducts__colors {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.recomProducts__colors .color-wrap {
+  position: relative;
+}
+
+.recomProducts__colors .color-badge {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: 1px solid rgba(0, 0, 0, 0.061);
+  outline-offset: 2px;
+  position: relative;
+  z-index: 6666;
+}
+
+.toolTip {
+  position: absolute;
+  transform: translate(-35%, 1px);
+  padding: 6px 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.322);
+  background-color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+}
+
+.show-toolTip {
+  visibility: visible;
+  opacity: 0;
+  animation: fadeIn 0.3s 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-35%, 1px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-35%, -1px);
+  }
+}
+
+.show-toolTip::before {
+  content: "";
+  background: transparent;
+  position: absolute;
+  width: 50%;
+  height: 7px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.recomProduct__title {
+  font-weight: 600;
+  font-size: 18px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.recomProduct__price {
+  color: grey;
+}
+
+@media (max-width: 1100px) {
+  .recomProducts__card {
+    min-width: calc(100% / 2 - 15px);
+  }
+}
+
+@media (max-width: 650px) {
+  .recomProducts__card {
+    min-width: 100%;
+  }
+}

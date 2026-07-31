@@ -1,0 +1,16 @@
+.explore .container {
+  padding: clamp(2.5rem, 4vw, 4rem);
+  background-color: #b6858513;
+  background-color: rgb(189, 158, 85);
+  border-radius: 15px;
+  color: #fff;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
